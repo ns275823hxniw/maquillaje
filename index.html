@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan True Beauty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor de inicio de sesión -->
+    <div id="login-container">
+        <h2>Iniciar Sesión o Registrarse</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="register()">Registrarse</button>
+        <button onclick="login()">Iniciar Sesión</button>
+        <p id="login-error" style="color: red;"></p>
+    </div>
+
+    <!-- Contenedor principal de la tienda (inicialmente oculto) -->
+    <div id="main-container" style="display: none;">
+        <header>
+            <h1>Dan True Beauty</h1>
+            <nav>
+                <button onclick="mostrarProductos('skincare')">Skincare</button>
+                <button onclick="mostrarProductos('maquillaje')">Maquillaje</button>
+                <button onclick="mostrarProductos('brochas')">Brochas</button>
+            </nav>
+        </header>
+        
+        <!-- Sección de productos -->
+        <section id="productos"></section>
+
+        <!-- Carrito de compras (inicialmente oculto) -->
+        <aside id="carrito" style="display: none;">
+            <h2>Carrito de Compras</h2>
+            <ul id="carrito-items"></ul>
+            <p id="total">Total: $0 USD</p>
+            <button id="realizar-compra" style="display: none;" onclick="realizarCompra()">Realizar Compra</button>
+        </aside>
+    </div>
+
+    <!-- Formulario de pago (inicialmente oculto) -->
+    <div id="formulario-pago" style="display: none;">
+        <h2>Formulario de Pago</h2>
+        <input type="text" id="nombre" placeholder="Nombre del titular" />
+        <input type="text" id="tarjeta" placeholder="Número de tarjeta" />
+        <button onclick="procesarPago()">Pagar</button>
+        <button onclick="volverTienda()">Volver a la tienda</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
